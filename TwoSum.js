@@ -27,3 +27,16 @@ Constraints:
 -109 <= nums[i] <= 109
 -109 <= target <= 109
 Only one valid answer exists.
+
+
+ var twoSum = function(nums, target) {
+    for(let i = 0 ; i < nums.length; i++){
+        for(let j = i+1 ; j < nums.length ; j++){
+            let x = nums[i] + nums[j]
+            if(x === target) {
+                return [i,j]
+            }
+        }
+    }
+    return 
+};
