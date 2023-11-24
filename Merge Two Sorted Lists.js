@@ -1,1 +1,4 @@
-done
+function mergeSortedLL(){
+  let res = [];
+  
+}
