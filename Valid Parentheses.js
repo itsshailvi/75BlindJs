@@ -22,3 +22,25 @@ Output: false
 Example 4:
 Input: s = "([])"
 Output: true
+
+//stack logic needed single for loop
+var isValid = function(s) {
+    const validPar = []
+    for (let i = 0 ; i < s.length ; i++){
+        if((s[i] == '(') || (s[i] == '[') || (s[i] == '{')){
+            validPar.push(s[i])
+        }else{
+            if( validPar.length > 0 && 
+            ((validPar[validPar.length-1] === '(' && s[i] === ')') || 
+             (validPar[validPar.length-1] == '[' && s[i] == ']') || 
+             (validPar[validPar.length-1] == '{' && s[i] == '}')) 
+             ){
+                validPar.pop()
+            }  
+            else {
+                return false
+            }
+        }
+    }
+        return validPar.length === 0
+    }
