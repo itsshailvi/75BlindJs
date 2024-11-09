@@ -40,3 +40,17 @@ Only one valid answer exists.
     }
     return 
 };
+
+var twoSum = function(nums, target) {
+    let sum = 0
+    let value,checkVal
+    let totalSum = nums.reduce((a,b) => a+b,0)
+    for(let i = 0; i<nums.length; i++){
+        value = target - nums[i]
+        checkVal = nums.includes(value)
+        if(checkVal && nums.indexOf(value) !== i){
+            return [i, nums.indexOf(value)]
+        }
+    }
+    return []
+};
