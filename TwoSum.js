@@ -54,3 +54,19 @@ var twoSum = function(nums, target) {
     }
     return []
 };
+
+var twoSum = function(nums, target) {
+    let numToIndexMap = {};
+
+    // Loop through the array
+    for (let i = 0; i < nums.length; i++) {
+        let diff = target - nums[i];
+        console.log(diff)
+        if (numToIndexMap.hasOwnProperty(diff)) {
+            console.log(i, numToIndexMap)
+            return [i, numToIndexMap[diff]];
+        }
+        numToIndexMap[nums[i]] = i;
+    }
+
+};
