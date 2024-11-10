@@ -7,3 +7,15 @@ var containsDuplicate = function(nums) {
     }
     return false
 };
+
+var containsDuplicate = function(nums) {
+    const checkDupli = {};
+    for(let i = 0 ; i < nums.length ; i++){
+        if(checkDupli.hasOwnProperty(nums[i])){
+            return true;
+        }else{
+            checkDupli[nums[i]]=i
+        }
+    }
+    return false
+};
